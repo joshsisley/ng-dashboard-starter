@@ -13,6 +13,7 @@ import en from '@angular/common/locales/en';
 import { LoginComponent } from './login/login.component';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
@@ -22,6 +23,7 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
+    NzIconModule,
     SharedModule,
     HomeModule,
     BrowserAnimationsModule

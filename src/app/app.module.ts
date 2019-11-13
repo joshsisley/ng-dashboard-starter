@@ -14,16 +14,19 @@ import { LoginComponent } from './login/login.component';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { RegisterComponent } from './register/register.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
     NzIconModule,
+    NzGridModule,
     SharedModule,
     HomeModule,
     BrowserAnimationsModule

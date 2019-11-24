@@ -23,11 +23,15 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.controls.email.value,
       password: this.loginForm.controls.password.value
     };
-    console.log('submit is called');
-    console.log(data);
     this.userService.login(data).subscribe(response => {
-      console.log('here is the response');
-      console.log(response);
+      if (response && response.token) {
+        localStorage.setItem('token', response.token.accessToken);
+        let date = new Date();
+        let hours = Math.round(response.token.expiresIn / 3600);
+        date.setHours(date.getHours() + hours);
+
+        localStorage.setItem('expires', JSON.stringify(date));
+      }
     });
   }
 }

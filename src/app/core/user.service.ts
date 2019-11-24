@@ -28,8 +28,6 @@ export class UserService {
   }
 
   register(registerVm): Observable<any> {
-    console.log('Register is called');
-    console.log(registerVm);
     let url_ = this.baseUrl + '/register';
     url_ = url_.replace(/[?&]$/, '');
 
@@ -59,5 +57,22 @@ export class UserService {
     return this.http
       .post(url, loginVm, options)
       .pipe(catchError(this.handleError));
+  }
+
+  isAuthenticated() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const expiration = localStorage.getItem('expires');
+      const expiresAtDate = new Date(JSON.parse(expiration));
+      const today = new Date();
+      if (expiresAtDate.getTime() > today.getTime()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
   }
 }

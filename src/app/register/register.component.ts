@@ -33,9 +33,6 @@ export class RegisterComponent implements OnInit {
       lastName: this.registerForm.controls.lastName.value,
       password: this.registerForm.controls.password.value
     };
-    this.userService.register(data).subscribe(user => {
-      console.log('here is the register response');
-      console.log(user);
-    });
+    this.userService.register(data).subscribe(user => {});
   }
 }

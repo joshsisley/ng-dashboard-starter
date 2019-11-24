@@ -1,7 +1,10 @@
 .register-wrapper {
   background: #fafafa;
   width: 100%;
-  height: calc(100vh - 149px);
+  height: 100vh;
+  input {
+    padding-left: 35px !important;
+  }
   .third-login {
     position: relative;
     margin-top: 24px;

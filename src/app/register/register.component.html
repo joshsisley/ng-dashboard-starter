@@ -2,21 +2,67 @@
   <div class="layout-container">
     <div class="layout-form">
       <div class="layout-form-main">
-        <div class="logo">
+        <!-- <div class="logo">
           <a href="/">
             <i nz-icon nzType="idcard" nzTheme="outline"></i>
           </a>
-        </div>
+        </div> -->
         <div class="content">
           <div class="slogan">
             <h2 class="slogan-main">
-              Sign Up
+              Create Account
             </h2>
             <p class="slogan-subhead">
-              Enter your info below
+              Create your account
             </p>
           </div>
-          <form class="ant-form ant-form-horizontal">
+          <form
+            [formGroup]="registerForm"
+            class="ant-form ant-form-horizontal"
+            (ngSubmit)="submit()"
+          >
+            <div class="ant-row ant-form-item">
+              <div class="ant-col ant-form-item-control-wrapper">
+                <div class="ant-form-item-control">
+                  <span class="ant-form-item-children">
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-lg"
+                    >
+                      <span class="ant-input-prefix">
+                        <i nz-icon nzType="mail" nzTheme="outline"></i>
+                      </span>
+                      <input
+                        class="ant-input ant-input-lg"
+                        type="text"
+                        placeholder="First Name"
+                        formControlName="firstName"
+                      />
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row ant-form-item">
+              <div class="ant-col ant-form-item-control-wrapper">
+                <div class="ant-form-item-control">
+                  <span class="ant-form-item-children">
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-lg"
+                    >
+                      <span class="ant-input-prefix">
+                        <i nz-icon nzType="mail" nzTheme="outline"></i>
+                      </span>
+                      <input
+                        class="ant-input ant-input-lg"
+                        type="text"
+                        placeholder="Last Name"
+                        formControlName="lastName"
+                      />
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
             <div class="ant-row ant-form-item">
               <div class="ant-col ant-form-item-control-wrapper">
                 <div class="ant-form-item-control">
@@ -31,6 +77,7 @@
                         class="ant-input ant-input-lg"
                         type="email"
                         placeholder="Email"
+                        formControlName="email"
                       />
                     </span>
                   </span>
@@ -64,6 +111,7 @@
                         class="ant-input ant-input-lg"
                         type="password"
                         placeholder="Password"
+                        formControlName="password"
                       />
                     </span>
                   </span>
@@ -97,6 +145,7 @@
                         class="ant-input ant-input-lg"
                         type="password"
                         placeholder="Confirm Password"
+                        formControlName="confirmPassword"
                       />
                     </span>
                   </span>
@@ -142,22 +191,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div id="footer" class="footer" data-testid="footer">
-  <div class="footer-container">
-    <div class="slogan" data-testid="slogan">
-      <span>Professional links and document repositories</span>
-    </div>
-    <div class="links" data-testid="links">
-      <a
-        href="https://github.com/joshsisley/ng-dashboard-starter"
-        target="_blank"
-        class=""
-        >Github
-      </a>
-      <a href="http://sisley.tech" target="_blank" class="">Profile</a>
     </div>
   </div>
 </div>

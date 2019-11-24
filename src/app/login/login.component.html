@@ -16,7 +16,11 @@
               This is the login page for the dashboard
             </p>
           </div>
-          <form class="ant-form ant-form-horizontal">
+          <form
+            class="ant-form ant-form-horizontal"
+            [formGroup]="loginForm"
+            (ngSubmit)="submit()"
+          >
             <div class="ant-row ant-form-item">
               <div class="ant-col ant-form-item-control-wrapper">
                 <div class="ant-form-item-control">
@@ -35,7 +39,8 @@
                       <input
                         class="ant-input ant-input-lg"
                         type="text"
-                        placeholder="Username"
+                        formControlName="email"
+                        placeholder="Email"
                       />
                     </span>
                   </span>
@@ -70,6 +75,7 @@
                       <input
                         class="ant-input ant-input-lg"
                         type="password"
+                        formControlName="password"
                         placeholder="Password"
                       />
                       <span class="ant-input-suffix">

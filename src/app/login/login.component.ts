@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../core/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { UserService } from '../core/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -31,6 +32,9 @@ export class LoginComponent implements OnInit {
         date.setHours(date.getHours() + hours);
 
         localStorage.setItem('expires', JSON.stringify(date));
+
+        // Redirect the user to /home
+        this.router.navigate(['/home'])
       }
     });
   }

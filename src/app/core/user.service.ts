@@ -11,6 +11,7 @@ import { mergeMap as _observableMergeMap, catchError } from 'rxjs/operators';
 import { UserVm, LoginResponseVm, LoginVm } from './user.model';
 import { ApiException } from './api-exception.model';
 import { SwaggerException } from './swagger.model';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -19,7 +20,7 @@ export class UserService {
     | ((key: string, value: any) => any)
     | undefined = undefined;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.baseUrl = 'http://localhost:3000/auth';
   }
 
@@ -74,5 +75,6 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }

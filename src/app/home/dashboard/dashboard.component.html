@@ -39,6 +39,10 @@
           </li>
         </ul>
       </li>
+      <li (click)="logout()" nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Log Out' : ''">
+        <i nz-icon nzType="logout" nzTheme="outline"></i>
+        <span>Log Out</span>
+      </li>
     </ul>
   </nz-sider>
   <nz-layout>

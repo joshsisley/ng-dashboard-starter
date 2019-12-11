@@ -7,6 +7,11 @@
           <li nz-menu-item nzMatchRouter><a routerLink="/welcome">Welcome</a></li>
         </ul>
       </li>
+      <li nz-submenu nzTitle="Settings" nzIcon="setting">
+        <ul>
+          <li nz-menu-item nzMatchRouter><a routerLink="/account">Account</a></li>
+        </ul>
+      </li>
       <li (click)="logout()" nz-menu-item>
         <i nz-icon nzType="logout"></i>
         <span>Log Out</span>
@@ -21,6 +26,19 @@
         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
         (click)="isCollapsed = !isCollapsed"
       ></i>
+      <ul class="nav-right">
+        <li>
+            <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                <nz-avatar nzIcon="user"></nz-avatar>
+              </a>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item>Edit Profile</li>
+                  <li (click)="logout()" nz-menu-item>Log Out</li>
+                </ul>
+              </nz-dropdown-menu>
+        </li>
+      </ul>
     </nz-header>
     <nz-content>
       <nz-breadcrumb>

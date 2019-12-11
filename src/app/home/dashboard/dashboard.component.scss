@@ -2,6 +2,18 @@
   height: 100%;
 }
 
+.nav-right {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: flex;
+  float: right;
+  margin-right: 16px;
+}
+
 .trigger {
   font-size: 18px;
   line-height: 64px;

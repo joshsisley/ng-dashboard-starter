@@ -1,53 +1,36 @@
-<nz-layout class="app-layout">
-  <nz-sider
-    class="menu-sidebar"
-    nzCollapsible
-    nzWidth="256px"
-    nzBreakpoint="md"
-    [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null"
-  >
-    <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-        <h1>Ant Design Of Angular</h1>
-      </a>
-    </div>
-    <ul
-      nz-menu
-      nzTheme="dark"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+<nz-layout class="dashboard-content">
+  <nz-sider [nzWidth]="250" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzTitle="Home" nzIcon="home">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
+          <li nz-menu-item nzMatchRouter><a routerLink="/welcome">Welcome</a></li>
         </ul>
       </li>
-      <li (click)="logout()" nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Log Out' : ''">
-        <i nz-icon nzType="logout" nzTheme="outline"></i>
+      <li (click)="logout()" nz-menu-item>
+        <i nz-icon nzType="logout"></i>
         <span>Log Out</span>
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <i
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-          ></i>
-        </span>
-      </div>
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></i>
     </nz-header>
     <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Welcome</nz-breadcrumb-item>
+      </nz-breadcrumb>
       <div class="inner-content">
         <router-outlet></router-outlet>
       </div>
     </nz-content>
+    <nz-footer>Dashboard Design ©2019 Sisley Tech LLC</nz-footer>
   </nz-layout>
 </nz-layout>

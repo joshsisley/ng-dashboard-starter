@@ -62,6 +62,8 @@ export class UserService {
 
   isAuthenticated() {
     const token = localStorage.getItem('token');
+    console.log('here is the token');
+    console.log(token);
     if (token) {
       const expiration = localStorage.getItem('expires');
       const expiresAtDate = new Date(JSON.parse(expiration));
@@ -75,6 +77,7 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('expires');
     this.router.navigate(['/login']);
   }
 }

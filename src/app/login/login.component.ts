@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('expires', JSON.stringify(date));
 
         // Redirect the user to /home
-        this.router.navigate(['/home'])
+        this.router.navigate(['/dashboard'])
       }
     });
   }

@@ -18,13 +18,16 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { RegisterComponent } from './register/register.component';
 import { CoreModule } from './core/core.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,12 +37,13 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     NzAvatarModule,
+    NzCardModule,
+    NzTabsModule,
     NzGridModule,
     CoreModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HomeModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

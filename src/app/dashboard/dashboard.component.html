@@ -1,15 +1,15 @@
 <nz-layout class="dashboard-content">
-  <nz-sider [nzWidth]="250" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+  <nz-sider [nzWidth]="250" nzCollapsible [nzBreakpoint]="'lg'" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzTitle="Home" nzIcon="home">
         <ul>
-          <li nz-menu-item nzMatchRouter><a routerLink="/welcome">Welcome</a></li>
+          <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/welcome">Welcome</a></li>
         </ul>
       </li>
       <li nz-submenu nzTitle="Settings" nzIcon="setting">
         <ul>
-          <li nz-menu-item nzMatchRouter><a routerLink="/account">Account</a></li>
+          <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/settings">User</a></li>
         </ul>
       </li>
       <li (click)="logout()" nz-menu-item>
@@ -33,7 +33,7 @@
               </a>
               <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
-                  <li nz-menu-item>Edit Profile</li>
+                  <li routerLink="/dashboard/settings" nz-menu-item>Edit Profile</li>
                   <li (click)="logout()" nz-menu-item>Log Out</li>
                 </ul>
               </nz-dropdown-menu>
